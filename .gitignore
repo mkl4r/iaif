@@ -1,0 +1,6 @@
+__pycache__
+*.egg-info
+iaif/data/simulations/*
+iaif/data/plots*
+iaif/data/iaif_agents*
+*.out
