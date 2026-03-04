@@ -1,6 +1,6 @@
 # Intermittent Active Inference
 
-Repository accompanying the paper ["Intermittent Active Inference"](https://www.mdpi.com/1099-4300/28/3/269) submitted to the entropy special issue "Active Inference in Cognitive Neuroscience".
+Repository accompanying the paper ["Intermittent Active Inference"](https://www.mdpi.com/1099-4300/28/3/269) published in the MDPI entropy special issue "Active Inference in Cognitive Neuroscience".
 The repository contains the mouse model used in the paper ("mouse_simple.py"), code to run different Intermittent Active Inference agents which control the mouse cursor ("run_iaif_agents.py"), and a Jupyter notebook to generate visualisations.
 
 
@@ -90,12 +90,18 @@ This project is licensed under the GNU General Public License v3.0 - see the [LI
 
 If you use this code in your research, please cite:
 ```bibtex
-@inproceedings{klar2026iaif,
-  title={Intermittent Active Inference},
-  author={Markus Klar and Sebastian Stein and Fraser Paterson and John H. Williamson and Henrik Gollee and Roderick Murray-Smith},
-  booktitle={Active Inference in Cognitive Neuroscience},
-  year={2026},
-  url={}
+@Article{klar2026iaif,
+AUTHOR = {Klar, Markus and Stein, Sebastian and Paterson, Fraser and Williamson, John H. and Gollee, Henrik and Murray-Smith, Roderick},
+TITLE = {Intermittent Active Inference},
+JOURNAL = {Entropy},
+VOLUME = {28},
+YEAR = {2026},
+NUMBER = {3},
+ARTICLE-NUMBER = {269},
+URL = {https://www.mdpi.com/1099-4300/28/3/269},
+ISSN = {1099-4300},
+ABSTRACT = {Active inference provides a unified framework for perception and action as processes of minimizing prediction error given a generative model of the environment. Whilst standard formulations assume continuous inference and control, empirical evidence indicates that humans update their control strategies intermittently, which reduces computational demands and mitigates propagation of correlated noise in closed feedback loops. To address this, we introduce Intermittent Active Inference (IAIF), a novel variant in which sensing, inference, planning, or acting can occur intermittently. This paper investigates intermittent planning, where IAIF agents follow their current plan and only re-plan when the prediction error exceeds a predefined threshold or the Expected Free Energy associated with the current plan surpasses prior estimates. We evaluate intermittent planning in a mouse pointing task, comparing against continuous planning while examining the impact of different threshold parameters on performance and efficiency. The findings indicate that IAIF reduces computation time whilst maintaining task performance, particularly when the number of plans sampled during planning is increased. In case of the proposed trigger based on Expected Free Energy, no additional calibration is required for this. The straightforward integration of IAIF makes it valuable in practical modelling workflows.},
+DOI = {10.3390/e28030269}
 }
 ```
 
