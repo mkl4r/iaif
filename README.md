@@ -43,7 +43,7 @@ The repository contains the mouse model used in the paper ("mouse_simple.py"), c
 
 - **`run_iaif_agents.py`**: Defines (Intermittent) Active Inference agents and runs simulations. Uses the AIF agent from [difai-base](https://github.com/mkl4r/difai-base) (our package for general Active Inference agents). Results are saved to `data/simulations/`
 - **`mouse_simple.py`**: Contains the 1D mouse cursor model and plotting tools.
-- **`visualise_results.ipynb`**: Jupyter notebook for generating plots similar to those in the paper.
+- **`visualise_results.ipynb`**: Jupyter notebook for generating plots similar to those in the paper. To generate the results in the paper, the notebook will download the simulation data from [Simulation Data for Intermittent Active Inference](https://zenodo.org/records/19115412) (ca. 300MB).
 
 ### Data Structure
 

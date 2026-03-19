@@ -53,7 +53,7 @@ class Mouse_Cursor(AIF_Env):
         return jnp.hstack([x[0], inside_button, x[2], x[3]]) # observe position, whether inside button, target position, target radius
 
 
-def plot_results(dt, xx, oo, bb, aa, aa_applied, lll, NEFE_PLAN=[], PRAGMATIC_PLAN=[], INFO_GAIN_PLAN=[], NEFES=[], PRAGMATICS=[], INFO_GAINS=[], bb_sys=[], bb_noise=[], bb_after_rt=[], reaction_time_steps=0, belief_button=False, hide_belief=False,
+def plot_results(dt, xx, oo, bb, aa, aa_applied, lll, NEFE_PLAN=[], PRAGMATIC_PLAN=[], INFO_GAIN_PLAN=[], bb_sys=[], bb_noise=[], bb_after_rt=[], reaction_time_steps=0, belief_button=False, hide_belief=False,
                  plot_axes=['pos', 'vel', 'button','target_position', 'target_radius',  'acc', 'loss', 'nefe'],
                  distance_unit="m", ic_timesteps=None, ic_pred_error=None, fig=None, ax=None, figsize_x=None):
     rows = []
@@ -73,8 +73,6 @@ def plot_results(dt, xx, oo, bb, aa, aa_applied, lll, NEFE_PLAN=[], PRAGMATIC_PL
         rows.append(['loss', 'lr'])
     elif 'loss' in plot_axes and len(lll) > 0:
         rows.append(['loss', 'loss'])
-    elif 'lr' in plot_axes and len(llr) > 0:
-        rows.append(['lr', 'lr'])
     elif 'nefe' in plot_axes and len(NEFE_PLAN) > 0:
         rows.append(['nefe', 'nefe'])
 
@@ -189,9 +187,7 @@ def plot_results(dt, xx, oo, bb, aa, aa_applied, lll, NEFE_PLAN=[], PRAGMATIC_PL
             ax['nefe'].set_xlabel('Time [s]')
             ax['nefe'].set_ylabel('NEFE')
             ax['nefe'].legend()
-        if len(NEFES) > 0:
-            ax['nefe'].violinplot(NEFES, positions=t[1:], showmeans=False, showmedians=False, widths=0.1, showextrema=False)
-
+            
     if reaction_time_steps >0  and len(bb_after_rt) > 0:
         if 'pos' in plot_axes:
             mean = [b[0][0] for b in bb_after_rt]
